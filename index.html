@@ -4,17 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping List</title>
+    <script src="script.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
 </head>
 <body>
 
     <h1>My Shopping List</h1>
-    <ul>
-        <li>Apples</li>
-        <li>Bread</li>
-        <li>Milk</li>
-        <li>Eggs</li>
-        <li>Cheese</li>
-    </ul>
+
+    <p>
+     <form id ="form1">
+        <label for="item-name">Item name:</label><br>
+        <input type="text" id="item-name" name="item-name"><br>
+        <button id="btn">Submit</button>
+        <button id="clear-btn">Clear List</button>
+    </form> 
+    </p>
+
+    <p>
+        <form id="form2">
+            <label for="remove-item-by-number">Remove Item by Number:</label><br>
+            <input type="text" id="remove-item-by-number" name="remove-item-by-number"><br>
+            <button id="remove-item-by-number-btn">Remove Item</button>
+        </form>
+    </p>
+
     
+    
+    <ul id="myList"></ul>
+
+
+
 </body>
 </html>
