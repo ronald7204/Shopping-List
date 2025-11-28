@@ -1,4 +1,4 @@
-const data = new Map();
+const data = new Array();
 let list = document.getElementById('myList');
 let increment = 1;
 
@@ -6,8 +6,7 @@ document.getElementById('btn').addEventListener('click',function(event)
 { 
     event.preventDefault();
     let itemName = document.getElementById('item-name').value;
-
-    data.set(increment, {itemName: itemName});
+    data.push({itemName: itemName});
     
     let li = document.createElement('li');
     li.id = `${increment}-item`;
@@ -16,17 +15,15 @@ document.getElementById('btn').addEventListener('click',function(event)
     list.appendChild(li);
     console.log(li.id);
     increment++;
+    // printData(data);
 
 });
 
 
-
-
-
-function printData(Map<number, {itemName: string}>: data) {
+function printData(data) {
     console.log(data);
+}   
 
-}
 
 
 // document.getElementById('clear-btn').addEventListener('click',function(event)
@@ -37,13 +34,14 @@ function printData(Map<number, {itemName: string}>: data) {
 //     }
 // });
 
-// document.getElementById('remove-item-by-number-btn').addEventListener('click',function(event)
-// { 
-//     event.preventDefault();
-//     let itemNumber = document.getElementById('remove-item-by-number').value;
-//     list.removeChild(li.ATTRIBUTE_NODE = itemNumber);
 
-//     data.push({removeByNumber: itemNumber, list});
-//     console.log(data);
+document.getElementById('remove-item-by-number-btn').addEventListener('click',function(event)
+{ 
+    event.preventDefault();
+    let itemNumber = document.getElementById('remove-item-by-number').value;
+    let li = document.getElementById(`${itemNumber}-item`);
+    li.textContent = "";
+
+    console.log("Removed: " + li.id);
    
-// });
+});
