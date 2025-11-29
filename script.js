@@ -1,6 +1,5 @@
 const data = new Array();
 let list = document.getElementById('myList');
-let increment = 1;
 
 document.getElementById('btn').addEventListener('click',function(event)
 { 
@@ -8,40 +7,46 @@ document.getElementById('btn').addEventListener('click',function(event)
     let itemName = document.getElementById('item-name').value;
     data.push({itemName: itemName});
     
-    let li = document.createElement('li');
-    li.id = `${increment}-item`;
-
-    li.textContent = itemName;
-    list.appendChild(li);
-    console.log(li.id);
-    increment++;
-    // printData(data);
-
+    printData(data, event);
 });
 
+function printData(data, event) {
+    event.preventDefault();
 
-function printData(data) {
-    console.log(data);
-}   
+    if (list.children.length > 0) {
+        // document.querySelectorAll('#myList li').forEach(e => e.remove());
+        removeAllChildNodes(list);
+    }
 
+    for(let i = 0; i < data.length; i++) {
+        let li = document.createElement('li');
+        li.textContent = data[i].itemName;
+        li.id = data.indexOf(data[i]) + 1 + "-item";
+        list.appendChild(li);
+    }   
+    console.log("length: " + list.children.length);
+}
 
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
 
-// document.getElementById('clear-btn').addEventListener('click',function(event)
-// { 
-//     event.preventDefault();
-//     for (let i = data.length - 1; i >= 0; i--) {
-//         list.removeChild(list.children[i]);
-//     }
-// });
-
+document.getElementById('clear-btn').addEventListener('click',function(event)
+{ 
+    event.preventDefault();
+    removeAllChildNodes(list);
+    data.length = 0;
+});
 
 document.getElementById('remove-item-by-number-btn').addEventListener('click',function(event)
 { 
     event.preventDefault();
     let itemNumber = document.getElementById('remove-item-by-number').value;
     let li = document.getElementById(`${itemNumber}-item`);
-    li.textContent = "";
 
     console.log("Removed: " + li.id);
-   
+    data.splice(itemNumber - 1, 1);
+    printData(data, event);
 });
