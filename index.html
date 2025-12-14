@@ -6,32 +6,27 @@
     <title>Shopping List</title>
     <script src="script.js" defer></script>
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <h1>My Shopping List</h1>
+    <main>
+        <h1>My Shopping List</h1>
 
-    <p>
-     <form id ="form1">
-        <label for="item-name">Item name:</label><br>
-        <input type="text" id="item-name" name="item-name"><br>
-        <button id="btn">Submit</button>
-        <button id="clear-btn">Clear List</button>
-    </form> 
-    </p>
-
-    <p>
-        <form id="form2">
-            <label for="remove-item-by-number">Remove Item by Number:</label><br>
-            <input type="text" id="remove-item-by-number" name="remove-item-by-number"><br>
-            <button id="remove-item-by-number-btn">Remove Item</button>
+        <form id ="form1" class ="parent">
+            <label id="form1-label" for="item-name" class = "child">Item name:</label>
+            <input id="item-name" type="text" name="item-name" class = "child">
+            <button id="btn" class = "child">Submit</button>
+            <button id="clear-btn" class = "child">Clear List</button>
         </form>
-    </p>
+        <ul id="myList"></ul>
 
-    
-    
-    <ul id="myList"></ul>
-
+        <form id="form2" class ="parent">
+            <label id="form2-label" class = "child" for="remove-item-by-number">Remove Item by Number:</label>
+            <input class = "child"type="text" id="remove-item-by-number" name="remove-item-by-number">
+            <button class = "child" id="remove-item-by-number-btn">Remove Item</button>
+        </form>
+    </main>
 
 
 </body>

@@ -14,7 +14,6 @@ function printData(data, event) {
     event.preventDefault();
 
     if (list.children.length > 0) {
-        // document.querySelectorAll('#myList li').forEach(e => e.remove());
         removeAllChildNodes(list);
     }
 
@@ -22,9 +21,25 @@ function printData(data, event) {
         let li = document.createElement('li');
         li.textContent = data[i].itemName;
         li.id = data.indexOf(data[i]) + 1 + "-item";
+
+        let newCheckbox = document.createElement('input');
+        newCheckbox.type = "checkbox";
+        newCheckbox.addEventListener('change', function () {
+            if (newCheckbox.checked) {
+                li.classList.add('strikethrough');
+            } else {
+                li.classList.remove('strikethrough');
+            }
+        });
+
+        newCheckbox.setAttribute("id", "checkbox");
+        li.prepend(newCheckbox); // Adds checkbox to the beginning of the list item
+        
+        console.log("Added: " + li.id + " - " + li.textContent);
         list.appendChild(li);
     }   
     console.log("length: " + list.children.length);
+
 }
 
 function removeAllChildNodes(parent) {
@@ -50,3 +65,13 @@ document.getElementById('remove-item-by-number-btn').addEventListener('click',fu
     data.splice(itemNumber - 1, 1);
     printData(data, event);
 });
+
+
+
+
+
+
+
+
+
+
