@@ -1,0 +1,82 @@
+.strikethrough {
+    text-decoration: line-through;
+    color: grey;
+}
+
+main {
+    display: grid;
+    gap: 20px;
+
+}
+
+.parent {
+    display: flex;
+}
+
+h1 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#myList li {
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+
+}
+
+#form1 {
+    display: grid; 
+    gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    justify-content: stretch;
+
+    #form1-label {
+            grid-column: 1;
+        }
+    
+    #item-name {
+        grid-column: 2 / span 3;
+    }
+
+    #btn {
+        grid-column: 3 / span 2;
+    }
+
+    #clear-btn {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+    }
+
+}
+
+
+
+#form2 {
+    display: grid; 
+    gap: 5px;
+    grid-template-columns: repeat(2, 1fr);
+
+    #form2-label {
+        grid-column: 1;
+    }
+
+    #remove-item-by-number {
+        grid-column: 2;
+    }
+
+    #remove-item-by-number-btn {
+        grid-column: 1 / span 2;
+    }
+
+}
+
+
+
