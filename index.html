@@ -7,9 +7,10 @@
     <script src="script.js" defer></script>
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
+hello
     <main>
         <h1>My Shopping List</h1>
 
@@ -19,14 +20,39 @@
             <button id="btn" class = "child">Submit</button>
             <button id="clear-btn" class = "child">Clear List</button>
         </form>
-        <ul id="myList"></ul>
+
+        <ul id="myList">
+            <li id="1-item">
+                <input type="checkbox" id="checkbox">
+                <div id="item-name">Milk</div>
+                <div id="volume">5</div>
+                <div id="quantity">1</div>
+            </li>
+        </ul>
 
         <form id="form2" class ="parent">
             <label id="form2-label" class = "child" for="remove-item-by-number">Remove Item by Number:</label>
-            <input class = "child"type="text" id="remove-item-by-number" name="remove-item-by-number">
+            <input class = "child"type="text" id="remove-item-by-number" name="remov-eitem-by-number">
             <button class = "child" id="remove-item-by-number-btn">Remove Item</button>
         </form>
     </main>
+
+
+
+    <div class="fab-wrapper"> 
+        <div class="fab-containers" id="plus-btn">
+            <i class="fa fa-plus"></i>
+        </div>
+
+        <div class="fab-containers" id="edit-btn">
+            <i class ="fa fa-edit"></i>
+        </div>
+
+        <div class="fab-containers" id="delete-btn">
+            <i class ="fa fa-trash"></i>
+        </div>
+    </div>
+
 
 
 </body>

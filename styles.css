@@ -28,7 +28,26 @@ ul {
     border: 1px solid black;
     padding: 5px;
     margin: 5px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
 
+    #checkbox {
+        grid-column: 1;
+    }
+
+    #item-name {
+        grid-column: 2 / span 3;
+        text-align: center;
+        border: 2px solid black;
+    }
+
+    #volume {
+        grid-column: 5 / span 2;
+    }
+
+    #quantity {
+        grid-column: 7 / span 2;
+    }
 }
 
 #form1 {
@@ -78,5 +97,42 @@ ul {
 
 }
 
+
+
+
+.fab-containers {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #b5e5ac;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    color: white
+}
+
+
+#plus-btn {
+    bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    right: 0px;
+    left: 0px;
+}
+
+
+#delete-btn {
+    bottom: 20px;
+    right: 20px;
+}
+
+
+#edit-btn {
+    bottom: 20px;
+    left: 20px;
+}
 
 

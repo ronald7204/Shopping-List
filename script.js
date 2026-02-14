@@ -1,11 +1,13 @@
 const data = new Array();
 let list = document.getElementById('myList');
 
-document.getElementById('btn').addEventListener('click',function(event)
+
+
+document.getElementById('btn').addEventListener('click',function(event) 
 { 
-    event.preventDefault();
     let itemName = document.getElementById('item-name').value;
     data.push({itemName: itemName});
+    a
     
     printData(data, event);
 });
@@ -66,6 +68,15 @@ document.getElementById('remove-item-by-number-btn').addEventListener('click',fu
     printData(data, event);
 });
 
+
+document.getElementById('plus-btn').addEventListener('click', function(event) {
+    event.preventDefault();
+    console.log("Plus button clicked");
+
+    document.querySelector('#item-name').scrollIntoView();
+
+    document.getElementById('item-name').focus();
+});
 
 
 
