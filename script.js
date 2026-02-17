@@ -5,7 +5,12 @@ document.getElementById('btn').addEventListener('click',function(event)
 { 
     event.preventDefault();
     let itemName = document.getElementById('item-name').value;
-    data.push({itemName: itemName});
+    let itemQty = document.getElementById('item-qty').value;
+
+    data.push({
+        itemName: itemName,
+        itemQty: itemQty
+    });
     
     printData(data, event);
 });
@@ -19,7 +24,7 @@ function printData(data, event) {
 
     for(let i = 0; i < data.length; i++) {
         let li = document.createElement('li');
-        li.textContent = data[i].itemName;
+        li.textContent = data[i].itemName + " " + data[i].itemQty;
         li.id = data.indexOf(data[i]) + 1 + "-item";
 
         let newCheckbox = document.createElement('input');

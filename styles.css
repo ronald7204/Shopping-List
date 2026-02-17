@@ -1,3 +1,8 @@
+body {
+    background-color: rgb(209, 244, 157);
+    font-family: monospace;
+}
+
 .strikethrough {
     text-decoration: line-through;
     color: grey;
@@ -15,6 +20,8 @@ main {
 
 h1 {
     text-align: center;
+    font-size: clamp(12px, 6vw, 64px);
+    color: green;
 }
 
 ul {
@@ -35,7 +42,7 @@ ul {
     display: grid; 
     gap: 5px;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     justify-content: stretch;
 
     #form1-label {
@@ -46,13 +53,18 @@ ul {
         grid-column: 2 / span 3;
     }
 
+    #item-qty {
+        grid-column: 2 / span 3;
+    }
+
     #btn {
         grid-column: 3 / span 2;
+        grid-row: 3;
     }
 
     #clear-btn {
         grid-column: 1 / span 2;
-        grid-row: 2;
+        grid-row: 3;
     }
 
 }
@@ -75,8 +87,8 @@ ul {
     #remove-item-by-number-btn {
         grid-column: 1 / span 2;
     }
-
 }
+
 
 
 
